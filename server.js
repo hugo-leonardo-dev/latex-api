@@ -7,6 +7,10 @@ const app = express();
 
 app.use(express.text({ limit: "10mb" }));
 
+app.get("/", (req, res) => {
+  res.send("latex api running");
+});
+
 app.post("/compile", async (req, res) => {
   try {
     const tex = req.body;
